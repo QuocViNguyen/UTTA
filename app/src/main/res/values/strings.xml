@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">3350</string>
+    <string name="course">Course</string>
+    <string name="contact_owner">Contact owner</string>
+    <string name="upload_post">Upload Post</string>
+    <string name="update_post">Update Post</string>
+    <string name="price">Price</string>
+    <string name="dollar">$</string>
+    <string name="back">Back</string>
+    <string name="description">Description</string>
+    <string name="title">Title</string>
+    <string name="months_old">months old.</string>
+    <string name="highlighted">Highlighted?</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="log_out">Log out</string>
+    <string name="institution">Institution</string>
+    <string name="posted_by">Posted by:</string>
+    <string name="ownername">ownerName</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="enter_password">Enter password</string>
+    <string name="select_institution">Select Institution</string>
+    <string name="register">Register</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_email">Enter email</string>
+    <string name="edit_account">Edit account</string>
+    <string name="delete">Delete</string>
+    <string name="listing_all_postings_of">Listing all postings of:</string>
+</resources>

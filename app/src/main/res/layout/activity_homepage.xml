@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="220dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Welcome"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/homepageUsernameTV"
+        android:layout_width="220dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_toEndOf="@+id/welcome"
+        android:layout_toRightOf="@+id/welcome"
+        android:gravity="center_vertical"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/postingsButton"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/welcome"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="165dp"
+        android:background="#F25022"
+        android:text="Postings"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/myProfileButton"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/homepageUsernameTV"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="165dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:background="#7FBA00"
+        android:text="My Profile"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/addPostButton"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/postingsButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="150dp"
+        android:background="#00A4EF"
+        android:text="Add  a post"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/editAccountButton"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/myProfileButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:background="#FFB900"
+        android:text="Edit account"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/addPostButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="221dp"
+        android:layout_marginLeft="221dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="231dp"
+        android:layout_marginRight="231dp"
+        android:background="#737373"
+        android:text="@string/log_out"
+        android:textSize="20sp" />
+
+</RelativeLayout>

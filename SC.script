@@ -1,0 +1,144 @@
+SET DATABASE UNIQUE NAME HSQLDB713C80D37E
+SET DATABASE GC 0
+SET DATABASE DEFAULT RESULT MEMORY ROWS 0
+SET DATABASE EVENT LOG LEVEL 0
+SET DATABASE TRANSACTION CONTROL LOCKS
+SET DATABASE DEFAULT ISOLATION LEVEL READ COMMITTED
+SET DATABASE TRANSACTION ROLLBACK ON CONFLICT TRUE
+SET DATABASE TEXT TABLE DEFAULTS ''
+SET DATABASE SQL NAMES FALSE
+SET DATABASE SQL REFERENCES FALSE
+SET DATABASE SQL SIZE TRUE
+SET DATABASE SQL TYPES FALSE
+SET DATABASE SQL TDC DELETE TRUE
+SET DATABASE SQL TDC UPDATE TRUE
+SET DATABASE SQL CONCAT NULLS TRUE
+SET DATABASE SQL UNIQUE NULLS TRUE
+SET DATABASE SQL CONVERT TRUNCATE TRUE
+SET DATABASE SQL AVG SCALE 0
+SET DATABASE SQL DOUBLE NAN TRUE
+SET FILES WRITE DELAY 500 MILLIS
+SET FILES BACKUP INCREMENT TRUE
+SET FILES CACHE SIZE 10000
+SET FILES CACHE ROWS 50000
+SET FILES SCALE 32
+SET FILES LOB SCALE 32
+SET FILES DEFRAG 0
+SET FILES NIO TRUE
+SET FILES NIO SIZE 256
+SET FILES LOG TRUE
+SET FILES LOG SIZE 50
+CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
+ALTER USER SA SET LOCAL TRUE
+CREATE SCHEMA PUBLIC AUTHORIZATION DBA
+SET SCHEMA PUBLIC
+CREATE MEMORY TABLE PUBLIC.INSTITUTION(NAME VARCHAR(60) NOT NULL,DOMAIN VARCHAR(60) NOT NULL PRIMARY KEY,UNIQUE(NAME))
+CREATE MEMORY TABLE PUBLIC.USER(NAME VARCHAR(60) NOT NULL,EMAIL VARCHAR(60) NOT NULL PRIMARY KEY,PASSWORD VARCHAR(40) NOT NULL,INSTITUTION VARCHAR(60) NOT NULL,UNIQUE(NAME),FOREIGN KEY(INSTITUTION) REFERENCES PUBLIC.INSTITUTION(NAME))
+CREATE MEMORY TABLE PUBLIC.COURSE(FACULTY VARCHAR(60) NOT NULL,CID INTEGER NOT NULL,NAME VARCHAR(100) NOT NULL,INSTITUTION VARCHAR(60) NOT NULL,PRIMARY KEY(FACULTY,CID),FOREIGN KEY(INSTITUTION) REFERENCES PUBLIC.INSTITUTION(NAME))
+CREATE MEMORY TABLE PUBLIC.POSTING(PID INTEGER NOT NULL PRIMARY KEY,FACULTY VARCHAR(60) NOT NULL,CID INTEGER NOT NULL,TITLE VARCHAR(100) NOT NULL,PRICE DOUBLE NOT NULL,DETAIL VARCHAR(16777216) NOT NULL,HIGHLIGHTED BOOLEAN NOT NULL,HOWOLD INTEGER NOT NULL,OWNER VARCHAR(50) NOT NULL,FOREIGN KEY(FACULTY,CID) REFERENCES PUBLIC.COURSE(FACULTY,CID),FOREIGN KEY(OWNER) REFERENCES PUBLIC.USER(EMAIL) ON DELETE CASCADE)
+CREATE MEMORY TABLE PUBLIC.RATING(RATED VARCHAR(60) NOT NULL,RATING DOUBLE NOT NULL,RATER VARCHAR(60) NOT NULL,FOREIGN KEY(RATED) REFERENCES PUBLIC.USER(EMAIL) ON DELETE CASCADE,FOREIGN KEY(RATER) REFERENCES PUBLIC.USER(EMAIL))
+ALTER SEQUENCE SYSTEM_LOBS.LOB_ID RESTART WITH 1
+SET DATABASE DEFAULT INITIAL SCHEMA PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.SQL_IDENTIFIER TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.YES_OR_NO TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.TIME_STAMP TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CARDINAL_NUMBER TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CHARACTER_DATA TO PUBLIC
+GRANT DBA TO SA
+SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+SET SCHEMA PUBLIC
+INSERT INTO INSTITUTION VALUES('Hogwarts School of Witchcraft and Wizardry','@hogwiz.uk')
+INSERT INTO INSTITUTION VALUES('Khan Academy','@khandemy.us')
+INSERT INTO INSTITUTION VALUES('Red River College','@myrrc.ca')
+INSERT INTO INSTITUTION VALUES('University of Manitoba','@myumanitoba.ca')
+INSERT INTO INSTITUTION VALUES('University of Winnipeg','@myuwinnipeg.ca')
+INSERT INTO INSTITUTION VALUES('Oxford University','@oxoxox.uk')
+INSERT INTO USER VALUES('Irene Adler','adlerire@oxoxox.uk','Sherlocked221','Oxford University')
+INSERT INTO USER VALUES('Chris Turk','christ@myrcc.ca','Warrior100','Red River College')
+INSERT INTO USER VALUES('Perry Cox','coxperry@myrcc.ca','OhDearGod100','Red River College')
+INSERT INTO USER VALUES('John Dorian','jaydee@myrcc.ca','DrCox123','Red River College')
+INSERT INTO USER VALUES('John Watson','jwatson@oxoxox.uk','scienceOfDeduction1','Oxford University')
+INSERT INTO USER VALUES('Robert Kelso','kelsorob@myrcc.ca','TurkTurkelton','Red River College')
+INSERT INTO USER VALUES('Lucille Bluth','lucilleb@hogwiz.uk','aMatterOfLand','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO USER VALUES('Michael Bluth','mbluth@myumanitoba.ca','123456','University of Manitoba')
+INSERT INTO USER VALUES('Quoc Vi Nguyen','nguyenvq@myumanitoba.ca','123456','University of Manitoba')
+INSERT INTO USER VALUES('Harry Potter','pharry@hogwiz.uk','HappyBirthday1','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO USER VALUES('Ron Weasley','ronweasley@hogwiz.uk','Hogwarts123','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO USER VALUES('Sherlock Holmes','sherlock@oxoxox.uk','ElementaryMyDearWatson','Oxford University')
+INSERT INTO USER VALUES('Luis Nguyen','thehaonguyen@myumanitoba.ca','21012003','University of Manitoba')
+INSERT INTO USER VALUES('Tin Trong Truong','tintt@myumanitoba.ca','thichbagia','University of Manitoba')
+INSERT INTO USER VALUES('Thao Vy Tran Nguyen','tranvt@myumanitoba.ca','299Hudson','University of Manitoba')
+INSERT INTO COURSE VALUES('ABIZ',1000,'Introduction to Agribusiness Management','University of Manitoba')
+INSERT INTO COURSE VALUES('ANTH',1000,'Archaeology and Anthropology','Oxford University')
+INSERT INTO COURSE VALUES('ANTH',1100,'Anthropology I','University of Winnipeg')
+INSERT INTO COURSE VALUES('ANTH',2000,'Archaeology and Anthropology II','Oxford University')
+INSERT INTO COURSE VALUES('ANTH',2100,'Anthropology II','University of Winnipeg')
+INSERT INTO COURSE VALUES('BIO',1000,'Foundations Of Life','University of Manitoba')
+INSERT INTO COURSE VALUES('BIO',1500,'Biology I','Khan Academy')
+INSERT INTO COURSE VALUES('BIO',2000,'Biology II','Khan Academy')
+INSERT INTO COURSE VALUES('BIZ',1120,'Applied Accounting I','Red River College')
+INSERT INTO COURSE VALUES('BIZ',2120,'Applied Accounting II','Red River College')
+INSERT INTO COURSE VALUES('BIZ',2740,'Legal Assistant','Red River College')
+INSERT INTO COURSE VALUES('CHEM',1000,'Chemistry I','Khan Academy')
+INSERT INTO COURSE VALUES('CHEM',2000,'Chemistry II','Khan Academy')
+INSERT INTO COURSE VALUES('CHEM',3000,'Chemistry III','Khan Academy')
+INSERT INTO COURSE VALUES('COMP',3030,'Automata','University of Manitoba')
+INSERT INTO COURSE VALUES('COMP',3170,'Analysis of Algorithms and Data Structures','University of Manitoba')
+INSERT INTO COURSE VALUES('COMP',3380,'Database Concepts','University of Manitoba')
+INSERT INTO COURSE VALUES('COMP',3490,'Computer Graphics','University of Manitoba')
+INSERT INTO COURSE VALUES('COMS',1450,'ASL and Deaf Studies','Red River College')
+INSERT INTO COURSE VALUES('COMS',1780,'Child and Youth Care','Red River College')
+INSERT INTO COURSE VALUES('ECONOMIC',1010,'Introduction To Micro economic Principles','University of Manitoba')
+INSERT INTO COURSE VALUES('ECONOMIC',1020,'Introduction To Macroeconomic Principles','University of Manitoba')
+INSERT INTO COURSE VALUES('ENG',3130,'Engineering','University of Manitoba')
+INSERT INTO COURSE VALUES('ERTH',1500,'Earth Science','Oxford University')
+INSERT INTO COURSE VALUES('ERTH',2500,'Geology','Oxford University')
+INSERT INTO COURSE VALUES('FUT',35,'Divination','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO COURSE VALUES('HIS',20,'History of Magic','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO COURSE VALUES('HIS',25,'Study of Ancient Runes','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO COURSE VALUES('HOSP',1020,'Hospitality and Tourism Management','Red River College')
+INSERT INTO COURSE VALUES('HOSP',2120,'Culinary Arts','Red River College')
+INSERT INTO COURSE VALUES('LANG',1500,'Spanish','University of Winnipeg')
+INSERT INTO COURSE VALUES('LANG',2500,'French','University of Winnipeg')
+INSERT INTO COURSE VALUES('LANG',4600,'German','University of Winnipeg')
+INSERT INTO COURSE VALUES('LAW',1100,'Criminal law','Oxford University')
+INSERT INTO COURSE VALUES('LAW',1600,'A Roman introduction to private law','Oxford University')
+INSERT INTO COURSE VALUES('LAW',2700,'European Union law','Oxford University')
+INSERT INTO COURSE VALUES('MAG',10,'Flying','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO COURSE VALUES('MAG',15,'Potions','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO COURSE VALUES('MAG',25,'Transfiguration','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO COURSE VALUES('PHY',1000,'Physics I','Khan Academy')
+INSERT INTO COURSE VALUES('PHY',2000,'Physics II','Khan Academy')
+INSERT INTO COURSE VALUES('PHY',3000,'Physics III','Khan Academy')
+INSERT INTO COURSE VALUES('PLA',15,'Herbology','Hogwarts School of Witchcraft and Wizardry')
+INSERT INTO COURSE VALUES('PSY',2000,'Introduction to Psychology I','University of Winnipeg')
+INSERT INTO COURSE VALUES('PSY',2200,'Introduction to Psychology II','University of Winnipeg')
+INSERT INTO POSTING VALUES(0,'COMP',3030,'Automata Book for COMP3030',59.99E0,'This book is required for COMP3030 and I suggest you get it asap',TRUE,10,'nguyenvq@myumanitoba.ca')
+INSERT INTO POSTING VALUES(1,'COMP',3030,'Introduction to Automata Theory, Languages, and Computation',120.0E0,'Introduction to Automata Theory, Languages, and Computation is an influential computer science textbook by John Hopcroft and Jeffrey Ullman on formal languages and the theory of computation.',TRUE,48,'mbluth@myumanitoba.ca')
+INSERT INTO POSTING VALUES(2,'ABIZ',1000,'Principles of agribusiness management',40.0E0,'Great condition, not touched',FALSE,1,'tranvt@myumanitoba.ca')
+INSERT INTO POSTING VALUES(3,'BIO',1000,'Biology Principles: A Critical Study',200.0E0,'Please buy it. Need money',TRUE,20,'thehaonguyen@myumanitoba.ca')
+INSERT INTO POSTING VALUES(4,'COMP',3170,'The Design and Analysis of Computer Algorithms',125.0E0,'With this text, you gain an understanding of the fundamental concepts of algorithms, the very heart of computer science',TRUE,6,'mbluth@myumanitoba.ca')
+INSERT INTO POSTING VALUES(5,'COMP',3380,'Refactoring databases',59.0E0,'Refactoring has proven its value in a wide range of development projects\u2013helping software professionals improve system designs, maintainability, extensibility, and performance',FALSE,10,'tintt@myumanitoba.ca')
+INSERT INTO POSTING VALUES(6,'COMP',3490,'Fundamentals of Computer Graphics',50.0E0,'Drawing on an impressive roster of experts in the field, Fundamentals of Computer Graphics, Fourth Edition offers an ideal resource for computer course curricula as well as a user-friendly personal or professional reference.',TRUE,12,'nguyenvq@myumanitoba.ca')
+INSERT INTO POSTING VALUES(7,'ECONOMIC',1020,'Macroeconomia',40.0E0,'Balancing classical and Keynesian economics, this work uses the modern approach of presenting long-run analysis before short-run fluctuations, and covers the large open economy in depth',FALSE,2,'mbluth@myumanitoba.ca')
+INSERT INTO POSTING VALUES(8,'ECONOMIC',1010,'Freakonomics',155.0E0,'A Rogue Economist Explores the Hidden Side of Everything is the debut non-fiction book by University of Chicago economist Steven Levitt and New York Times journalist Stephen J. Dubner',TRUE,3,'tranvt@myumanitoba.ca')
+INSERT INTO POSTING VALUES(9,'ENG',3130,'The Design of Everyday Things',200.0E0,'The Design of Everyday Things is a best-selling book by cognitive scientist and usability engineer Donald Norman about how design serves as the communication between object and user, and how to optimize that conduit of communication in order to make the experience of using the object pleasurable.',FALSE,10,'mbluth@myumanitoba.ca')
+INSERT INTO POSTING VALUES(10,'HIS',20,'The look at previous spells',28.0E0,'Good condition. Not used',FALSE,2,'pharry@hogwiz.uk')
+INSERT INTO POSTING VALUES(11,'PLA',15,'How to excel in herbology',10.0E0,'Used, some torn pages',TRUE,38,'lucilleb@hogwiz.uk')
+INSERT INTO POSTING VALUES(12,'MAG',10,'Fly to the sky',200.0E0,'New book, packed',FALSE,4,'ronweasley@hogwiz.uk')
+INSERT INTO POSTING VALUES(13,'MAG',15,'Textbook of Half-blood Prince',400.0E0,'Old textbook, some new potions and spells',TRUE,40,'pharry@hogwiz.uk')
+INSERT INTO POSTING VALUES(14,'FUT',35,'Intro to Divination',40.0E0,'Used but still in great condition, has notes in it',TRUE,4,'pharry@hogwiz.uk')
+INSERT INTO POSTING VALUES(15,'FUT',35,'Intro to Divination',165.0E0,'New book, still packed',FALSE,4,'ronweasley@hogwiz.uk')
+INSERT INTO POSTING VALUES(16,'BIZ',1120,'The E Myth',40.0E0,'An instant classic, this revised and updated edition of the phenomenal bestseller dispels the myths about starting your own business.',FALSE,8,'jaydee@myrcc.ca')
+INSERT INTO POSTING VALUES(17,'BIZ',2120,'Zero to One',15.0E0,': Notes on Startups, or How to Build the Future is a 2014 book by the American entrepreneur and investor Peter Thiel co-written with Blake Masters',TRUE,10,'christ@myrcc.ca')
+INSERT INTO POSTING VALUES(18,'HOSP',1020,'The Heart of Hospitality: Great Hotel and Restaurant Leaders Share Their Secrets',105.0E0,'Success in today\u2019s rapidly changing hospitality industry depends on understanding the desires of guests of all ages, from seniors and boomers to the newly dominant millennial generation of travelers',FALSE,2,'kelsorob@myrcc.ca')
+INSERT INTO POSTING VALUES(19,'COMS',1450,'Seeing Voices',50.0E0,'A Journey Into the World of the Deaf is a 1989 book by neurologist Oliver Sacks. The book covers a variety of topics in Deaf studies, including sign language, the neurology of deafness, the history of the treatment of Deaf Americans, and linguistic and social challenges facing the Deaf community',TRUE,5,'coxperry@myrcc.ca')
+INSERT INTO POSTING VALUES(20,'COMS',1780,'A Child and Youth Care Approach to Working with Families',250.0E0,'Use this newly developed family-oriented approach to be a better youth worker! In A Child and Youth Care Approach to Working with Families, practitioners and trainers in a new child methodology show you how to expand your youth program to involve family work using the Child and Youth Care Approach.Use this newly developed family-oriented approach to be a better youth worker! In A Child and Youth Care Approach to Working with Families, practitioners and trainers in a new child methodology show you how to expand your youth program to involve family work using the Child and Youth Care Approach.',FALSE,1,'jaydee@myrcc.ca')
+INSERT INTO POSTING VALUES(21,'ANTH',1000,'Guns, Germs, and Steel',10.0E0,'Guns, Germs, and Steel: The Fates of Human Societies is a 1997 transdisciplinary non-fiction book by Jared Diamond, professor of geography and physiology at the University of California, Los Angeles',TRUE,19,'jwatson@oxoxox.uk')
+INSERT INTO POSTING VALUES(22,'ANTH',2000,'Coming of Age in Samoa',260.0E0,'Coming of Age in Samoa is a book by American anthropologist Margaret Mead based upon her research and study of youth \u2013 primarily adolescent girls \u2013 on the island of Ta in the Samoan Islands. ',FALSE,2,'adlerire@oxoxox.uk')
+INSERT INTO POSTING VALUES(23,'ERTH',1500,'A Short History of Nearly Everything ',50.0E0,'A  Short History of Nearly Everything by American-British author Bill Bryson is a popular science book that explains some areas of science, using easily accessible language that appeals more to the general public than many other books dedicated to the subject.',FALSE,8,'jwatson@oxoxox.uk')
+INSERT INTO POSTING VALUES(24,'LAW',1100,'The New Jim Crow: Mass Incarceration in the Age of Colorblindness',75.0E0,'The New Jim Crow: Mass Incarceration in the Age of Colorblindness is a book by Michelle Alexander, a civil rights litigator and legal scholar.',TRUE,7,'sherlock@oxoxox.uk')
+INSERT INTO POSTING VALUES(25,'LAW',1600,'Learning Roman criminal law',40.0E0,'This comprehensive text provides vital background information and a coherent structure for understanding the law.',TRUE,10,'adlerire@oxoxox.uk')
+INSERT INTO POSTING VALUES(26,'LAW',1100,'Criminal Procedure',150.0E0,'Structured chronologically, the relevant rules and procedures are introduced and explained in the same sequence as the criminal process, offering a logical and intuitive organization.',FALSE,1,'sherlock@oxoxox.uk')
+INSERT INTO POSTING VALUES(27,'LAW',2700,'Smith & Hogan Criminal Law',60.0E0,'Celebrating fifty years since it first published in 1965, Smith & Hogan Criminal Law is rightly regarded as the leading doctrinal textbook on criminal law in England and Wales.',FALSE,4,'jwatson@oxoxox.uk')

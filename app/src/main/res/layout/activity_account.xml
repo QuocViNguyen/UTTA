@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/confirmPassTextView"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextView"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/whichInstitution"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="40dp"
+        android:focusable="false"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/select_institution"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassTextView" />
+
+    <Spinner
+        android:id="@+id/institutionSpinner"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whichInstitution" />
+
+    <EditText
+        android:id="@+id/passwordTextView"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="@string/enter_password"
+        android:inputType="textPassword"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/domainTextView" />
+
+    <Button
+        android:id="@+id/accountButton"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/register"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="60dp"
+        android:text="@android:string/cancel"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/domainTextView"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_vertical"
+        android:textSize="28sp"
+        app:layout_constraintStart_toEndOf="@+id/emailTextView"
+        app:layout_constraintTop_toBottomOf="@+id/usernameTextView" />
+
+    <EditText
+        android:id="@+id/usernameTextView"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="@string/enter_username"
+        android:inputType="textPersonName"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/emailTextView"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="@string/enter_email"
+        android:inputType="textPersonName"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

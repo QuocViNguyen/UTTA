@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="ADD_POST">1</integer>
+    <integer name="VIEW_POST">2</integer>
+    <integer name="EDIT_POST">3</integer>
+    <integer name="USER_PROFILE">4</integer>
+    <integer name="MY_PROFILE">5</integer>
+    <string name="calling_activity">calling_activity</string>
+    <string name="detail">detail</string>
+    <string name="age">age</string>
+    <string name="faculties">faculties</string>
+    <string name="courses">courses</string>
+    <string name="username">username</string>
+    <string name="id">id</string>
+    <string name="allGood">Account created successfully.</string>
+    <string name="filterBy">Filter By</string>
+    <string name="whatToShowNext">showing (courses, faculties, or postings)</string>
+    <string name="postings">postings</string>
+    <string name="email">emails</string>
+    <string name="from">viewing posts from user profile or from list of posts</string>
+</resources>

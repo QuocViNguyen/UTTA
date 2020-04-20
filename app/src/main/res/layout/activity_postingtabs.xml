@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/courseTab"
+        android:layout_width="325dp"
+        android:layout_height="135dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginLeft="138dp"
+        android:layout_marginTop="150dp"
+        android:text="@string/course"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/facultyTab"
+        android:layout_width="325dp"
+        android:layout_height="135dp"
+        android:layout_below="@+id/courseTab"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginLeft="138dp"
+        android:layout_marginTop="110dp"
+        android:text="Faculty"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/allPostingsTab"
+        android:layout_width="325dp"
+        android:layout_height="135dp"
+        android:layout_below="@+id/facultyTab"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginLeft="138dp"
+        android:layout_marginTop="110dp"
+        android:text="All"
+        android:textSize="30sp" />
+</RelativeLayout>

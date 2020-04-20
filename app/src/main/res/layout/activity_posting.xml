@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/listingPostingHeading"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/listing_all_postings_of"
+        android:textSize="20sp"/>
+
+    <ListView
+        android:id="@+id/postingListView"
+        android:layout_width="490dp"
+        android:layout_height="760dp"
+        android:layout_below="@+id/listingPostingHeading"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:id="@+id/filteredByTextView"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="100dp"
+        android:layout_toEndOf="@+id/listingPostingHeading"
+        android:layout_toRightOf="@+id/listingPostingHeading"
+        android:gravity="center_vertical"
+        android:textSize="20sp" />
+
+</RelativeLayout>
