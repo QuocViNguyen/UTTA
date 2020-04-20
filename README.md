@@ -1,5 +1,6 @@
 # UTTA
 
+
 The University Textbook Trading Application (UTTA) will allow students to buy and sell textbooks and course materials from other students. It will allow for students to sell and post their used course material and also allow students to purchase them, similar to Facebook Marketplace or Kijiji. Unlike other online marketplaces, UTTA is targeted towards students, and enables students to easily find what they’re looking for.
 We are the future of knowledge-exchange. We strive towards a world where anyone, at any school can advertise information and find what they need. Where there is no spam cluttering up the legitimate textbook postings. That is what UTTA is for, and what students the world over need. 
 ****
@@ -29,4 +30,4 @@ We are the future of knowledge-exchange. We strive towards a world where anyone,
  
  Iteration is now complete! Release notes and apk can be found in the following link.
   [Release](https://code.cs.umanitoba.ca/comp3350-winter2020/my-cool-project-6/-/tags/Iteration-3)
- 
+
